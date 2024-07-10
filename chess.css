@@ -1,0 +1,47 @@
+/* Chessboard styling */
+.chess-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+  border: 2px solid #333; /* Board border */
+}
+
+/* Square styling */
+.chess-piece {
+  box-sizing: border-box;
+  width: calc(100% / 8);
+  height: calc(100% / 8);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White squares */
+.WhiteSquares {
+  background-color: #f0d9b5;
+}
+
+/* Black squares */
+.BlackSquares {
+  background-color: #b58863;
+}
+
+/* Highlight for selected and legal move squares */
+.highlight {
+  outline: 2px solid gold; /* Highlight color */
+  outline-offset: -4px; /* Offset to fit inside square */
+}
+
+.legal-move::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3); /* Gray circle */
+}
